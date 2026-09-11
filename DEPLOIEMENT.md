@@ -32,7 +32,7 @@ Les adresses ont été fournies pour les racines des sites. Chaque racine doit o
 
 Les vérifications de code ont été effectuées lors de la préparation. La validation du chargement depuis les adresses GitHub Pages doit être faite après publication. Les releases ne sont pas nécessaires au service GitHub Pages.
 
-La version reste **0.12.0** pour cette étape. Une version stable 1.0.0 pourra être préparée après validation, avec mise à jour cohérente du HTML, du README, de la notice et de l’historique. Le fichier `RELEASE_NOTES.md` contient un texte prêt pour une éventuelle préversion 0.12.0.
+La version reste **0.12.1** pour cette étape. Une version stable 1.0.0 pourra être préparée après validation, avec mise à jour cohérente du HTML, du README, de la notice et de l’historique. Le fichier `RELEASE_NOTES.md` contient un texte prêt pour une éventuelle préversion 0.12.1.
 
 ## English
 
@@ -42,4 +42,4 @@ No build step is required. `index.html` contains the complete hub; `projets.html
 
 The configured URLs must open the adapted applications. The hub adds `?projets=1`. The hub and all connected tools must share the same origin. Preserve the origin, source-window and session checks.
 
-Before a release, test every connected tool, switching and reloading, JSON export/import, and Farde ZIP import/export with images. Farde’s global JSON entry must remain a lightweight link. Check desktop and small-screen navigation. The hosted integration still needs validation; version 0.12.0 is retained for this stage.
+Before a release, test every connected tool, switching and reloading, JSON export/import, and Farde ZIP import/export with images. Farde’s global JSON entry must remain a lightweight link. Check desktop and small-screen navigation. The hosted integration still needs validation; version 0.12.1 is retained for this stage.

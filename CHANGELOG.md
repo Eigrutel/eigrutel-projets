@@ -1,5 +1,11 @@
 # Historique / Changelog
 
+## 0.12.1 — 2026-09-11
+
+- Rétablissement du paramètre Projets après une redirection.
+- Recherche du HTML raccordé depuis une page d’accueil de dépôt.
+- Diagnostic précisant la page qui ne répond pas.
+
 ## 0.12.0 — 2026-09-11
 
 - Adresses GitHub Pages des neuf applications raccordées, dont Univers à son adresse corrigée.
@@ -42,4 +48,4 @@
 
 ## English summary
 
-0.12.0 moves the nine connected tool URLs to GitHub Pages and packages the repository documentation. Earlier iterations introduced project covers and colours, collapsible navigation, connected tools, and a separate local Farde binder with ZIP backups. Hosted integration validation remains pending.
+0.12.1 moves the nine connected tool URLs to GitHub Pages and packages the repository documentation. Earlier iterations introduced project covers and colours, collapsible navigation, connected tools, and a separate local Farde binder with ZIP backups. Hosted integration validation remains pending.

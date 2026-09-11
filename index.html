@@ -2,7 +2,7 @@
 <!--
 Eigrutel Lab — Atelier d’outils libres pour la bande dessinée
 Programme conçu et développé par Simon Léturgie / Eigrutel BD Academy.
-Nom : Projets • Version : 0.12.0 • Date : 11-09-2026
+Nom : Projets • Version : 0.12.1 • Date : 11-09-2026
 Code : GNU AGPL v3.0 ou version ultérieure.
 Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 -->
@@ -14,7 +14,7 @@ Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 @media(max-width:760px){.top{padding:12px 16px;min-height:78px}.top .badge{display:none}.wrap{padding:24px 16px}.heading{align-items:flex-start}.heading .actions{justify-content:flex-end}.grid{grid-template-columns:1fr}.projectbar{padding:9px 12px;flex-wrap:wrap;gap:7px}.projectbar .status{max-width:none}.projectbar button{padding:7px 10px}.layout{flex-direction:column}.rail{display:flex;width:100%;padding:7px 10px;border-right:0;border-bottom:1px solid var(--line);gap:5px;overflow:auto;flex-shrink:0}.rail .rail-label{display:none}.rail button{width:auto;flex:none;white-space:nowrap;margin:0;font-size:.9rem;padding:8px 12px}.rail button small{display:none}.overview{padding:22px 16px}.choices .options{grid-template-columns:1fr}.dialogbody{padding:22px}.workspace{height:calc(100dvh - 78px)}.card{padding:20px}.top .brand small{font-size:.65rem}.top .actions button{padding:8px 10px}}
 @media print{.top,.rail,.projectbar,footer{display:none}.workspace{height:auto}}
 
-/* v0.12.0 — albums et bandeaux de catalogue */
+/* v0.12.1 — albums et bandeaux de catalogue */
 .top{display:none}
 .workspace,body.in-project .workspace{height:100dvh}
 .wrap{padding-top:24px}
@@ -96,7 +96,7 @@ Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 @media(prefers-reduced-motion:reduce){.book-cover{transition:none}.book-cover:hover{transform:none}}
 
 
-/* v0.12.0 — couleur propre au projet et navigation repliable */
+/* v0.12.1 — couleur propre au projet et navigation repliable */
 #home h1.eyebrow{font-size:.8rem;letter-spacing:.1em;margin:0;font-weight:700}
 .rail button{justify-content:flex-start;text-align:left}
 .rail .rail-label{text-align:left;padding-left:8px}
@@ -117,11 +117,11 @@ Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 .project-color-row label{font-size:.85rem;font-weight:500;color:var(--muted);white-space:nowrap;cursor:pointer}
 .project-color-row input[type=color]{width:36px;height:32px;padding:2px;border:1px solid #b9c0c4;border-radius:4px;background:white;cursor:pointer;flex:none}
 </style></head><body>
-<header class="top"><div class="brand"><span class="monogram" aria-hidden="true">P</span><div><strong>Projets</strong><small>Eigrutel Lab</small></div><span class="badge">Prémaquette · 0.12.0</span></div><div class="actions"><button id="helpBtn" class="quiet" title="Utilisation et sauvegardes">Aide</button></div></header>
+<header class="top"><div class="brand"><span class="monogram" aria-hidden="true">P</span><div><strong>Projets</strong><small>Eigrutel Lab</small></div><span class="badge">Prémaquette · 0.12.1</span></div><div class="actions"><button id="helpBtn" class="quiet" title="Utilisation et sauvegardes">Aide</button></div></header>
 <div id="globalError" role="alert" hidden></div>
 <main id="home" class="wrap"><div class="heading"><div><h1 class="eyebrow">Votre atelier</h1></div><div class="actions"><button id="importProject">Importer un projet</button><button class="primary" id="newProject">+ Nouveau projet</button></div></div><div id="projects" class="grid"></div><div id="empty" class="empty" hidden><h2>Un projet, ses outils, votre travail.</h2><p>Choisissez les applications utiles à votre projet. Retrouvez ensuite chaque outil avec les données qui lui appartiennent.</p><button class="primary" id="firstProject">Créer mon premier projet</button></div><p class="notice">Les projets sont conservés dans ce navigateur. Exportez régulièrement une copie pour les sauvegarder ou les transférer sur un autre appareil.</p></main>
 <section id="workspace" class="workspace" hidden><div class="projectbar"><button id="backHome" title="Revenir à la liste des projets">‹ Votre atelier</button><button id="toggleRail" type="button" aria-controls="rail" aria-expanded="true" title="Masquer les outils"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg><span>Outils</span></button><div class="grow"><h1 id="projectTitle"></h1></div><span id="status" class="status" role="status" aria-live="polite"></span><button id="editProject" title="Renommer le projet et choisir ses outils">Réglages</button><button id="exportProject" class="primary" title="Télécharger tous les outils et leurs données dans un fichier JSON">Exporter le projet</button></div><div class="layout"><nav id="rail" class="rail" aria-label="Outils du projet"></nav><div class="surface"><div id="overview" class="overview"></div><div id="frameArea" class="frame-area" hidden><div class="loading" id="loading">Ouverture de l’application…</div><iframe id="appFrame" title="Application du projet" hidden></iframe></div></div></div></section>
-<footer>Simon Léturgie · Eigrutel Lab · Projets v0.12.0 · 11-09-2026</footer>
+<footer>Simon Léturgie · Eigrutel Lab · Projets v0.12.1 · 11-09-2026</footer>
 <dialog id="projectDialog"><form id="projectForm"><div class="dialogbody"><h2 id="dialogTitle">Nouveau projet</h2><label for="name">Nom du projet</label><input id="name" type="text" required maxlength="140" placeholder="Ex. Atelier de dessin" autocomplete="off"><label for="coverFile">Couverture du projet</label><div class="cover-setting"><div id="coverPreview" class="cover-preview"></div><div class="cover-controls"><button type="button" id="chooseCover">Choisir une image</button><button type="button" id="removeCover" class="quiet">Retirer l’image</button><small id="coverStatus" role="status">Image conservée avec le projet.</small></div></div><input type="file" id="coverFile" accept="image/jpeg,image/png,image/webp,image/gif" hidden><p style="margin-top:18px">Choisissez les outils de votre espace. Boussole, Personnages, Univers, Scénoscope, Comic Script, Pop!, WIP et 7 Questions enregistrent leurs données dans le projet. Farde conserve son classeur sur cet appareil et se sauvegarde séparément en ZIP. Narratopedia est accessible directement, sans sauvegarde de son état.</p><div id="choices" class="choices"></div><div class="project-color-row"><label for="projectColor">Couleur du projet</label><input id="projectColor" type="color" value="#7f2d30" title="Choisir la couleur du projet"></div></div><div class="dialogfoot"><button type="button" id="cancelDialog">Annuler</button><button type="submit" class="primary">Enregistrer</button></div></form></dialog>
 <dialog id="helpDialog"><div class="dialogbody"><h2>Travailler par projet</h2><p>Créez un projet, cochez ses outils, puis ouvrez Boussole ou Personnages. Le nom du projet est renseigné et les modifications sont enregistrées automatiquement.</p><p>La barre des outils permet de circuler sans charger de fichier. Le bouton « Outils » permet de masquer ou réafficher cette navigation. « Vue du projet » donne accès aux imports et exports propres à chaque outil.</p><h3>Couvertures</h3><p>Dans les réglages, choisissez une image pour la couverture de votre projet. Elle est incluse dans son export JSON.</p><h3>Sauvegarder et transférer</h3><p>« Exporter le projet » télécharge un fichier <strong>projet_nom.json</strong> contenant les données des outils, y compris les portraits de Personnages. Pour Farde, seule la liaison est incluse : conservez également son ZIP séparé. « Importer un projet » restaure une copie indépendante, sans écraser un projet existant.</p><p>Le stockage est local à ce navigateur et à cette adresse. Il n’y a ni compte ni synchronisation automatique. Une copie exportée reste nécessaire en cas d’effacement des données du navigateur.</p><h3>Cette prémaquette</h3><p>Boussole, Personnages, Univers et Scénoscope sont raccordés avec sauvegarde. Narratopedia et Flash s’ouvrent directement depuis GitHub : leurs recherches et tirages ne sont pas enregistrés et peuvent être réinitialisés à chaque ouverture. Une connexion Internet est nécessaire pour les charger. Retirer un outil de la sélection masque son accès mais conserve ses données ; le cocher de nouveau les rétablit. Les applications ouvertes seules gardent leur espace indépendant.</p><p>Les trois fichiers HTML doivent être hébergés ensemble, à la même adresse de dossier. Utilisez un seul onglet Projets à la fois.</p></div><div class="dialogfoot"><button id="closeHelp">Fermer</button></div></dialog>
 <input type="file" id="projectFile" accept=".json,application/json" hidden><input type="file" id="toolFile" accept=".json,application/json" hidden><div id="toast" role="status" hidden></div>
@@ -201,8 +201,50 @@ async function openTool(id){
    return;
  }
  const toolUrl=new URL(a.url);toolUrl.searchParams.set('projets','1');
+ const openingSession=session;let repairs=0,resolving=false,connectionDetail='';
+ const navigateConnected=url=>{
+   if(session!==openingSession||loaded||repairs>=3)return;
+   const next=new URL(url,toolUrl);if(next.origin!==location.origin)return;
+   next.searchParams.set('projets','1');repairs++;$('appFrame').src=next.href;
+ };
+ $('appFrame').onload=async()=>{
+   if(session!==openingSession||loaded||resolving)return;
+   try{
+     const frame=$('appFrame').contentWindow;
+     const currentUrl=new URL(frame.location.href);
+     if(currentUrl.protocol==='about:')return;
+     if(currentUrl.searchParams.get('projets')!=='1'){
+       connectionDetail='La redirection a supprimé le mode Projets.';
+       navigateConnected(currentUrl.href);return;
+     }
+     if(frame.EigrutelApp)return;
+     resolving=true;
+     // A repository landing page may link to the real application HTML.
+     const candidates=Array.from(frame.document.querySelectorAll('a[href]')).map(x=>new URL(x.getAttribute('href'),currentUrl));
+     candidates.push(new URL(id+'.html',toolUrl));
+     if(id==='comicscript')candidates.push(new URL('script.html',toolUrl));
+     const seen=new Set();
+     for(const url of candidates){
+       if(session!==openingSession||loaded)return;
+       if(url.origin!==location.origin||!url.pathname.startsWith(toolUrl.pathname)||!url.pathname.endsWith('.html')||seen.has(url.href))continue;
+       seen.add(url.href);
+       try{
+         const response=await fetch(url.href,{cache:'no-cache'});
+         if(!response.ok)continue;
+         const html=await response.text();
+         if(html.includes('eigrutel-projets-v1')&&html.includes('EigrutelApp')){
+           connectionDetail='La page d’accueil ne lançait pas directement la version raccordée.';
+           navigateConnected(response.url||url.href);return;
+         }
+       }catch(e){}
+     }
+     connectionDetail='La page chargée ne fournit pas le raccordement Projets. Vérifiez le fichier HTML publié dans ce dépôt.';
+   }catch(e){connectionDetail='La page chargée a changé de domaine : la liaison nécessite la même origine que Projets.';}
+   finally{resolving=false;}
+ };
+
  status('Ouverture…');$('appFrame').src=toolUrl.href;
- frameTimer=setTimeout(()=>{if(!loaded){$('loading').textContent='La connexion à '+a.name+' a échoué. Vérifiez que sa version adaptée est publiée sur GitHub Pages et que Projets est également ouvert depuis https://eigrutel.github.io, puis réessayez.';status('Connexion impossible',true);}},12000);
+ frameTimer=setTimeout(()=>{if(!loaded){$('loading').textContent='La connexion à '+a.name+' a échoué. '+(connectionDetail||'Vérifiez que le HTML adapté est publié sur GitHub Pages.')+' Adresse : '+a.url;status('Connexion impossible',true);}},12000);
 }
 window.addEventListener('message',async event=>{
  const m=event.data;if(event.origin!==location.origin||event.source!==$('appFrame').contentWindow||m?.channel!=='eigrutel-projets-v1'||!activeTool||!current||m.appId!==activeTool||app(activeTool).directUrl)return;
