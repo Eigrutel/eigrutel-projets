@@ -1,5 +1,13 @@
 # Historique / Changelog
 
+## 0.14.0 — 2026-09-12
+
+- Tous les outils actifs cochés par défaut à la création, sans modifier les projets existants.
+- Interface FR/EN : textes, aide, infobulles, messages et dates ; préférence locale.
+- Changement de langue sans rechargement de l’outil ni perte des réglages saisis.
+- Code remis en forme et commenté ; aide obsolète corrigée.
+- En-tête harmonisé et favicon PNG dédié, reprenant le monogramme existant.
+
 ## 0.13.0 — 2026-09-12
 
 - Mention personnalisable en bas des couvertures, après la couleur dans les réglages.

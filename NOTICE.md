@@ -1,13 +1,17 @@
 # Notice d’utilisation / User guide
 
-Projets 0.13.0 — Eigrutel Lab — Simon Léturgie — 12-09-2026
+Projets 0.14.0 — Eigrutel Lab — Simon Léturgie — 12-09-2026
 
 ## Français
+
+### Langue
+
+Le bouton discret FR / EN est disponible dans votre atelier et dans l’espace projet. Le français est utilisé par défaut. Le choix est mémorisé dans ce navigateur ; il ne traduit pas les noms saisis, les contenus ou les applications ouvertes. Le changement conserve les réglages en cours de saisie.
 
 ### Créer un projet
 
 1. Ouvrez Projets et cliquez sur « Nouveau projet ».
-2. Donnez un nom au projet et cochez les outils souhaités.
+2. Donnez un nom au projet. Tous les outils disponibles sont déjà cochés ; décochez ceux dont vous n’avez pas besoin.
 3. Ajoutez éventuellement une couverture et choisissez une couleur.
 4. Validez, puis ouvrez un outil depuis « Les outils du projet ».
 
@@ -66,9 +70,13 @@ Transmettez le JSON et, si nécessaire, le ZIP Farde. Convenez de la personne qu
 
 ## English
 
+### Language
+
+Use FR / EN in the workshop or project toolbar. French is the default; the browser remembers your preference. Switching does not translate user content or connected applications, reload the active tool, or discard unsaved project settings.
+
 ### Create and navigate
 
-Choose “Nouveau projet”, enter a name, select your tools and optionally add a cover and colour. Open a tool from the project overview. Use the left navigation to switch tools; “Outils” collapses it and “Votre atelier” returns to the project library.
+Choose “Nouveau projet”, enter a name, keep all available tools selected or deselect some, and optionally add a cover and colour. Open a tool from the project overview. Use the left navigation to switch tools; “Outils” collapses it and “Votre atelier” returns to the project library.
 
 The hub waits for connected tools to acknowledge saving before leaving them. If saving fails, keep the tool open, retry and use its own export when necessary. Selecting tools does not automatically transfer content between them.
 

@@ -2,7 +2,7 @@
 
 Un espace pour retrouver les outils Eigrutel Lab autour d’un même projet de bande dessinée.
 
-**Version : 0.13.0 · 12 septembre 2026**  
+**Version : 0.14.0 · 12 septembre 2026**  
 Conçu et développé par **Simon Léturgie**, dans le cadre d’Eigrutel BD Academy.
 
 [Ouvrir Projets](https://eigrutel.github.io/eigrutel-projets/) · [Notice FR/EN](NOTICE.md) · [Logithèque](https://www.stripmee.com/logitheque/) · [Soutenir le développement](https://fr.tipeee.com/leturgie/)
@@ -19,7 +19,7 @@ Créez un projet, choisissez ses outils et passez de l’un à l’autre dans le
 - Import/export JSON individuel pour les outils compatibles.
 - Farde liée à un classeur local distinct, avec sauvegarde ZIP séparée.
 
-L’interface de Projets est actuellement en français. Les applications conservent leurs propres options de langue.
+L’interface de Projets est bilingue FR/EN, avec français par défaut et préférence mémorisée dans ce navigateur. Les applications conservent leurs propres options de langue. Tous les outils disponibles sont cochés par défaut pour chaque nouveau projet.
 
 ## Applications
 
@@ -58,12 +58,14 @@ Cette version pointe vers les applications publiées sous `https://eigrutel.gith
 
 | Fichier | Rôle |
 | --- | --- |
-| `index.html` | Application complète : HTML, CSS et JavaScript ; favicons intégrés |
+| `index.html` | Application complète : HTML, CSS et JavaScript ; favicons des outils intégrés |
+| `favicon/favprojets.png` | Icône de Projets et icône tactile, remplaçable par votre PNG |
+| `CODE.md` | Repères pour maintenir le code et les traductions |
 | `projets.html` | Redirection vers l’application pour conserver ce nom de lien |
 | `NOTICE.md` | Utilisation, sauvegarde, transfert et dépannage FR/EN |
 | `DEPLOIEMENT.md` | Publication GitHub Pages et vérifications FR/EN |
 | `CHANGELOG.md` | Historique des versions |
-| `RELEASE_NOTES.md` | Texte préparé pour la version 0.13.0 |
+| `RELEASE_NOTES.md` | Texte préparé pour la version 0.14.0 |
 | `LICENSE` | Texte intégral GNU AGPL v3 |
 | `LICENSE-DOCS.txt` | Texte intégral CC BY-SA 4.0 |
 | `TRADEMARKS.md` | Marques, logos et signes distinctifs |
@@ -86,7 +88,7 @@ Les contenus importés par les utilisateurs ne sont pas placés sous ces licence
 
 **Projets** brings Eigrutel Lab tools together within a comic-book project. Create a project, select its tools and switch between them without manually reloading each tool’s JSON file.
 
-Project covers and accent colours are customisable. The navigation panel can be collapsed. The hub currently uses a French interface; individual tools retain their own language options.
+Project covers and accent colours are customisable. The navigation panel can be collapsed. The hub supports French and English, defaults to French and remembers the selected language in this browser. Individual tools retain their own language options. All available tools are selected by default for new projects.
 
 Project data is stored locally in the browser, with no account or automatic cross-device synchronisation. Export JSON backups regularly. **Farde remains separate: its images and cards are not included in the project JSON. Keep an up-to-date Farde ZIP alongside that JSON.** Narratopedia is a consultation tool without project data saving.
 

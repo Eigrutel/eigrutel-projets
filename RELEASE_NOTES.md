@@ -1,8 +1,10 @@
-# Projets v0.13.0 — Intégration GitHub Pages
+# Projets v0.14.0 — Intégration GitHub Pages
 
 Texte préparé pour une préversion. À publier après le contrôle des ouvertures et sauvegardes sur GitHub Pages.
 
 ## Français
+
+Interface bilingue FR/EN, tous les outils présélectionnés à la création et favicon dédié.
 
 Projets rassemble les outils Eigrutel Lab dans des espaces de travail organisés par projet.
 
@@ -17,6 +19,8 @@ Pas de compte ni de synchronisation automatique. Les données locales ne suivent
 Code : GNU AGPL v3.0 ou ultérieure. Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 
 ## English
+
+French/English interface, all tools selected by default for new projects and a dedicated favicon.
 
 Projets groups Eigrutel Lab tools into project workspaces, with custom covers and colours, collapsible navigation, connected tools and local JSON backups. Narratopedia is available for consultation.
 
