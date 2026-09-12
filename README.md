@@ -2,7 +2,7 @@
 
 Un espace pour retrouver les outils Eigrutel Lab autour d’un même projet de bande dessinée.
 
-**Version : 0.14.0 · 12 septembre 2026**  
+**Version : 0.14.1 · 12 septembre 2026**  
 Conçu et développé par **Simon Léturgie**, dans le cadre d’Eigrutel BD Academy.
 
 [Ouvrir Projets](https://eigrutel.github.io/eigrutel-projets/) · [Notice FR/EN](NOTICE.md) · [Logithèque](https://www.stripmee.com/logitheque/) · [Soutenir le développement](https://fr.tipeee.com/leturgie/)
@@ -65,7 +65,7 @@ Cette version pointe vers les applications publiées sous `https://eigrutel.gith
 | `NOTICE.md` | Utilisation, sauvegarde, transfert et dépannage FR/EN |
 | `DEPLOIEMENT.md` | Publication GitHub Pages et vérifications FR/EN |
 | `CHANGELOG.md` | Historique des versions |
-| `RELEASE_NOTES.md` | Texte préparé pour la version 0.14.0 |
+| `RELEASE_NOTES.md` | Texte préparé pour la version 0.14.1 |
 | `LICENSE` | Texte intégral GNU AGPL v3 |
 | `LICENSE-DOCS.txt` | Texte intégral CC BY-SA 4.0 |
 | `TRADEMARKS.md` | Marques, logos et signes distinctifs |

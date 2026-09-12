@@ -1,4 +1,4 @@
-# Projets v0.14.0 — Intégration GitHub Pages
+# Projets v0.14.1 — Intégration GitHub Pages
 
 Texte préparé pour une préversion. À publier après le contrôle des ouvertures et sauvegardes sur GitHub Pages.
 

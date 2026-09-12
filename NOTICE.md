@@ -1,6 +1,6 @@
 # Notice d’utilisation / User guide
 
-Projets 0.14.0 — Eigrutel Lab — Simon Léturgie — 12-09-2026
+Projets 0.14.1 — Eigrutel Lab — Simon Léturgie — 12-09-2026
 
 ## Français
 
@@ -72,11 +72,11 @@ Transmettez le JSON et, si nécessaire, le ZIP Farde. Convenez de la personne qu
 
 ### Language
 
-Use FR / EN in the workshop or project toolbar. French is the default; the browser remembers your preference. Switching does not translate user content or connected applications, reload the active tool, or discard unsaved project settings.
+Use FR / EN in your comic studio or project toolbar. French is the default; the browser remembers your preference. Switching does not translate user content or connected applications, reload the active tool, or discard unsaved project settings.
 
 ### Create and navigate
 
-Choose “Nouveau projet”, enter a name, keep all available tools selected or deselect some, and optionally add a cover and colour. Open a tool from the project overview. Use the left navigation to switch tools; “Outils” collapses it and “Votre atelier” returns to the project library.
+Choose “Nouveau projet”, enter a name, keep all available tools selected or deselect some, and optionally add a cover and colour. Open a tool from the project overview. Use the left navigation to switch tools; “Outils” collapses it and “Votre atelier” returns to the comic studio.
 
 The hub waits for connected tools to acknowledge saving before leaving them. If saving fails, keep the tool open, retry and use its own export when necessary. Selecting tools does not automatically transfer content between them.
 

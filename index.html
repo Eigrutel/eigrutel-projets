@@ -3,7 +3,7 @@
 Eigrutel Lab - Atelier d'outils libres pour la bande dessinée
 Programme conçu et développé par Simon Léturgie dans le cadre d'Eigrutel BD Academy.
 Nom : Projets
-Version : 0.14.0
+Version : 0.14.1
 Date : 12-09-2026
 
 Code : GNU AGPL v3.0 ou version ultérieure.
@@ -554,7 +554,7 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
         }
       }
 
-      /* v0.14.0 — albums et bandeaux de catalogue */
+      /* v0.14.1 — albums et bandeaux de catalogue */
       .top {
         display: none;
       }
@@ -1016,7 +1016,7 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
         }
       }
 
-      /* v0.14.0 — couleur propre au projet et navigation repliable */
+      /* v0.14.1 — couleur propre au projet et navigation repliable */
       #home h1.eyebrow {
         font-size: 0.8rem;
         letter-spacing: 0.1em;
@@ -1139,6 +1139,14 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
         padding: 6px 8px;
         min-height: 36px;
       }
+      /* Libellé anglais compact / Compact English navigation label. */
+      html[lang="en"] #backHome {
+        font-size: 0.82rem;
+        letter-spacing: -0.02em;
+        padding: 7px 9px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
     </style>
   </head>
   <body>
@@ -1150,7 +1158,7 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
           <small>Eigrutel Lab</small>
         </div>
         <span class="badge">
-          <span data-i18n="Prémaquette · 0.14.0">Prémaquette · 0.14.0</span>
+          <span data-i18n="Prémaquette · 0.14.1">Prémaquette · 0.14.1</span>
         </span>
       </div>
       <div class="actions">
@@ -1301,7 +1309,7 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
         </div>
       </div>
     </section>
-    <footer>Simon Léturgie · Eigrutel Lab · Projets v0.14.0 · 12-09-2026</footer>
+    <footer>Simon Léturgie · Eigrutel Lab · Projets v0.14.1 · 12-09-2026</footer>
     <dialog id="projectDialog">
       <form id="projectForm">
         <div class="dialogbody">
@@ -1475,8 +1483,8 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
         language = localStorage.getItem(LANGUAGE_KEY) === "en" ? "en" : "fr";
       } catch (error) {}
       const EN = {
-        "Votre atelier": "Your workshop",
-        "‹ Votre atelier": "‹ Your workshop",
+        "Votre atelier": "Your comic studio",
+        "‹ Votre atelier": "‹ Your comic studio",
         "Importer un projet": "Import a project",
         "+ Nouveau projet": "+ New project",
         "Un projet, ses outils, votre travail.": "One project, its tools, your work.",
@@ -1663,7 +1671,7 @@ Marques, logos et signes distinctifs Eigrutel / Eigrutel Lab / Eigrutel BD Acade
           "All available tools are selected for a new project. You can remove or reorder them. Narratopedia is available for consultation without saving. Farde stores its cards and images on this device: save its ZIP separately. Removing a tool hides it but keeps its data. Standalone applications retain their independent workspaces.",
         "Projets et les applications raccordées doivent être publiés sous https://eigrutel.github.io. Une connexion Internet est nécessaire pour ouvrir les outils. Utilisez un seul onglet Projets à la fois.":
           "Projets and its connected applications must be published under https://eigrutel.github.io. An Internet connection is required to open tools. Use only one Projets tab at a time.",
-        "Prémaquette · 0.14.0": "Preview · 0.14.0",
+        "Prémaquette · 0.14.1": "Preview · 0.14.1",
         "Données Univers invalides": "Invalid Universe",
         "Vue générale manquante": "Missing overview",
         "Carte invalide": "Invalid map",

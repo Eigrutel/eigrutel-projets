@@ -1,5 +1,9 @@
 # Historique / Changelog
 
+## 0.14.1 — 2026-09-12
+
+- Libellé anglais « Your comic studio » et bouton de retour resserré.
+
 ## 0.14.0 — 2026-09-12
 
 - Tous les outils actifs cochés par défaut à la création, sans modifier les projets existants.
