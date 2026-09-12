@@ -1,5 +1,9 @@
 # Historique / Changelog
 
+## 0.14.2
+
+- Exemple de nom de projet anglais clarifié : « For example: My comic project ».
+
 ## 0.14.1 — 2026-09-12
 
 - Libellé anglais « Your comic studio » et bouton de retour resserré.

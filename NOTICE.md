@@ -1,6 +1,6 @@
 # Notice d’utilisation / User guide
 
-Projets 0.14.1 — Eigrutel Lab — Simon Léturgie — 12-09-2026
+Projets 0.14.2 — Eigrutel Lab — Simon Léturgie — 12-09-2026
 
 ## Français
 
