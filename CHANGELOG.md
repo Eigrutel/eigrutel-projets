@@ -1,5 +1,12 @@
 # Historique / Changelog
 
+## 0.13.0 — 2026-09-12
+
+- Mention personnalisable en bas des couvertures, après la couleur dans les réglages.
+- Ordre des outils par glisser-déposer souris/tactile et raccourcis clavier.
+- Ordre propre au projet conservé dans les exports et dans la colonne de gauche.
+- Retrait des catégories de la colonne de navigation.
+
 ## 0.12.1 — 2026-09-11
 
 - Rétablissement du paramètre Projets après une redirection.

@@ -1,6 +1,6 @@
 # Notice d’utilisation / User guide
 
-Projets 0.12.1 — Eigrutel Lab — Simon Léturgie — 11-09-2026
+Projets 0.13.0 — Eigrutel Lab — Simon Léturgie — 12-09-2026
 
 ## Français
 
@@ -12,6 +12,12 @@ Projets 0.12.1 — Eigrutel Lab — Simon Léturgie — 11-09-2026
 4. Validez, puis ouvrez un outil depuis « Les outils du projet ».
 
 Le nom initialise le projet dans l’outil. Certains outils disposent ensuite de leur propre titre éditable. Choisir un outil ne copie pas automatiquement les données d’un autre outil dans celui-ci.
+
+### Personnaliser la couverture et l’ordre des outils
+
+Dans les réglages, après la couleur, « Texte en bas de couverture » remplace la mention Eigrutel Lab. Un champ vide masque cette mention.
+
+Glissez un bandeau gris vers un autre pour déplacer l’outil, à la souris ou au doigt. Un simple clic ouvre l’outil. Au clavier, placez le focus sur le bandeau et utilisez Alt + une flèche. L’ordre est conservé pour ce projet, repris dans la colonne de gauche et dans le JSON exporté. Les catégories ne sont plus affichées dans la colonne de gauche.
 
 ### Travailler et naviguer
 
@@ -65,6 +71,10 @@ Transmettez le JSON et, si nécessaire, le ZIP Farde. Convenez de la personne qu
 Choose “Nouveau projet”, enter a name, select your tools and optionally add a cover and colour. Open a tool from the project overview. Use the left navigation to switch tools; “Outils” collapses it and “Votre atelier” returns to the project library.
 
 The hub waits for connected tools to acknowledge saving before leaving them. If saving fails, keep the tool open, retry and use its own export when necessary. Selecting tools does not automatically transfer content between them.
+
+### Customise covers and tool order
+
+In project settings, the cover-footer field appears after the colour control and defaults to Eigrutel Lab. Leave it empty to hide the text. Drag a grey tool banner onto another using mouse or touch to reorder it; a simple click opens the tool. Keyboard users can focus a banner and press Alt + an arrow. The order is saved per project, reflected in the left navigation and included in JSON exports. Category headings are removed from the left navigation.
 
 ### Back up and restore
 

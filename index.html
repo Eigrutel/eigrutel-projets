@@ -2,7 +2,7 @@
 <!--
 Eigrutel Lab — Atelier d’outils libres pour la bande dessinée
 Programme conçu et développé par Simon Léturgie / Eigrutel BD Academy.
-Nom : Projets • Version : 0.12.1 • Date : 11-09-2026
+Nom : Projets • Version : 0.13.0 • Date : 12-09-2026
 Code : GNU AGPL v3.0 ou version ultérieure.
 Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 -->
@@ -14,7 +14,7 @@ Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 @media(max-width:760px){.top{padding:12px 16px;min-height:78px}.top .badge{display:none}.wrap{padding:24px 16px}.heading{align-items:flex-start}.heading .actions{justify-content:flex-end}.grid{grid-template-columns:1fr}.projectbar{padding:9px 12px;flex-wrap:wrap;gap:7px}.projectbar .status{max-width:none}.projectbar button{padding:7px 10px}.layout{flex-direction:column}.rail{display:flex;width:100%;padding:7px 10px;border-right:0;border-bottom:1px solid var(--line);gap:5px;overflow:auto;flex-shrink:0}.rail .rail-label{display:none}.rail button{width:auto;flex:none;white-space:nowrap;margin:0;font-size:.9rem;padding:8px 12px}.rail button small{display:none}.overview{padding:22px 16px}.choices .options{grid-template-columns:1fr}.dialogbody{padding:22px}.workspace{height:calc(100dvh - 78px)}.card{padding:20px}.top .brand small{font-size:.65rem}.top .actions button{padding:8px 10px}}
 @media print{.top,.rail,.projectbar,footer{display:none}.workspace{height:auto}}
 
-/* v0.12.1 — albums et bandeaux de catalogue */
+/* v0.13.0 — albums et bandeaux de catalogue */
 .top{display:none}
 .workspace,body.in-project .workspace{height:100dvh}
 .wrap{padding-top:24px}
@@ -96,7 +96,7 @@ Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 @media(prefers-reduced-motion:reduce){.book-cover{transition:none}.book-cover:hover{transform:none}}
 
 
-/* v0.12.1 — couleur propre au projet et navigation repliable */
+/* v0.13.0 — couleur propre au projet et navigation repliable */
 #home h1.eyebrow{font-size:.8rem;letter-spacing:.1em;margin:0;font-weight:700}
 .rail button{justify-content:flex-start;text-align:left}
 .rail .rail-label{text-align:left;padding-left:8px}
@@ -116,13 +116,20 @@ Documentation : CC BY-SA 4.0. Marques et logos Eigrutel réservés.
 .project-color-row{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .project-color-row label{font-size:.85rem;font-weight:500;color:var(--muted);white-space:nowrap;cursor:pointer}
 .project-color-row input[type=color]{width:36px;height:32px;padding:2px;border:1px solid #b9c0c4;border-radius:4px;background:white;cursor:pointer;flex:none}
+
+/* Ordre des outils propre à chaque projet : souris, stylet et écran tactile. */
+.tool-banner{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.tool-banner img{-webkit-user-drag:none;pointer-events:none}
+.tool-entry.is-dragging{opacity:.45}
+.tool-entry.drop-target{outline:3px solid var(--red);outline-offset:5px}
+.book-imprint{overflow-wrap:anywhere}
 </style></head><body>
-<header class="top"><div class="brand"><span class="monogram" aria-hidden="true">P</span><div><strong>Projets</strong><small>Eigrutel Lab</small></div><span class="badge">Prémaquette · 0.12.1</span></div><div class="actions"><button id="helpBtn" class="quiet" title="Utilisation et sauvegardes">Aide</button></div></header>
+<header class="top"><div class="brand"><span class="monogram" aria-hidden="true">P</span><div><strong>Projets</strong><small>Eigrutel Lab</small></div><span class="badge">Prémaquette · 0.13.0</span></div><div class="actions"><button id="helpBtn" class="quiet" title="Utilisation et sauvegardes">Aide</button></div></header>
 <div id="globalError" role="alert" hidden></div>
 <main id="home" class="wrap"><div class="heading"><div><h1 class="eyebrow">Votre atelier</h1></div><div class="actions"><button id="importProject">Importer un projet</button><button class="primary" id="newProject">+ Nouveau projet</button></div></div><div id="projects" class="grid"></div><div id="empty" class="empty" hidden><h2>Un projet, ses outils, votre travail.</h2><p>Choisissez les applications utiles à votre projet. Retrouvez ensuite chaque outil avec les données qui lui appartiennent.</p><button class="primary" id="firstProject">Créer mon premier projet</button></div><p class="notice">Les projets sont conservés dans ce navigateur. Exportez régulièrement une copie pour les sauvegarder ou les transférer sur un autre appareil.</p></main>
 <section id="workspace" class="workspace" hidden><div class="projectbar"><button id="backHome" title="Revenir à la liste des projets">‹ Votre atelier</button><button id="toggleRail" type="button" aria-controls="rail" aria-expanded="true" title="Masquer les outils"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg><span>Outils</span></button><div class="grow"><h1 id="projectTitle"></h1></div><span id="status" class="status" role="status" aria-live="polite"></span><button id="editProject" title="Renommer le projet et choisir ses outils">Réglages</button><button id="exportProject" class="primary" title="Télécharger tous les outils et leurs données dans un fichier JSON">Exporter le projet</button></div><div class="layout"><nav id="rail" class="rail" aria-label="Outils du projet"></nav><div class="surface"><div id="overview" class="overview"></div><div id="frameArea" class="frame-area" hidden><div class="loading" id="loading">Ouverture de l’application…</div><iframe id="appFrame" title="Application du projet" hidden></iframe></div></div></div></section>
-<footer>Simon Léturgie · Eigrutel Lab · Projets v0.12.1 · 11-09-2026</footer>
-<dialog id="projectDialog"><form id="projectForm"><div class="dialogbody"><h2 id="dialogTitle">Nouveau projet</h2><label for="name">Nom du projet</label><input id="name" type="text" required maxlength="140" placeholder="Ex. Atelier de dessin" autocomplete="off"><label for="coverFile">Couverture du projet</label><div class="cover-setting"><div id="coverPreview" class="cover-preview"></div><div class="cover-controls"><button type="button" id="chooseCover">Choisir une image</button><button type="button" id="removeCover" class="quiet">Retirer l’image</button><small id="coverStatus" role="status">Image conservée avec le projet.</small></div></div><input type="file" id="coverFile" accept="image/jpeg,image/png,image/webp,image/gif" hidden><p style="margin-top:18px">Choisissez les outils de votre espace. Boussole, Personnages, Univers, Scénoscope, Comic Script, Pop!, WIP et 7 Questions enregistrent leurs données dans le projet. Farde conserve son classeur sur cet appareil et se sauvegarde séparément en ZIP. Narratopedia est accessible directement, sans sauvegarde de son état.</p><div id="choices" class="choices"></div><div class="project-color-row"><label for="projectColor">Couleur du projet</label><input id="projectColor" type="color" value="#7f2d30" title="Choisir la couleur du projet"></div></div><div class="dialogfoot"><button type="button" id="cancelDialog">Annuler</button><button type="submit" class="primary">Enregistrer</button></div></form></dialog>
+<footer>Simon Léturgie · Eigrutel Lab · Projets v0.13.0 · 12-09-2026</footer>
+<dialog id="projectDialog"><form id="projectForm"><div class="dialogbody"><h2 id="dialogTitle">Nouveau projet</h2><label for="name">Nom du projet</label><input id="name" type="text" required maxlength="140" placeholder="Ex. Atelier de dessin" autocomplete="off"><label for="coverFile">Couverture du projet</label><div class="cover-setting"><div id="coverPreview" class="cover-preview"></div><div class="cover-controls"><button type="button" id="chooseCover">Choisir une image</button><button type="button" id="removeCover" class="quiet">Retirer l’image</button><small id="coverStatus" role="status">Image conservée avec le projet.</small></div></div><input type="file" id="coverFile" accept="image/jpeg,image/png,image/webp,image/gif" hidden><p style="margin-top:18px">Choisissez les outils de votre espace. Boussole, Personnages, Univers, Scénoscope, Comic Script, Pop!, WIP et 7 Questions enregistrent leurs données dans le projet. Farde conserve son classeur sur cet appareil et se sauvegarde séparément en ZIP. Narratopedia est accessible directement, sans sauvegarde de son état.</p><div id="choices" class="choices"></div><div class="project-color-row"><label for="projectColor">Couleur du projet</label><input id="projectColor" type="color" value="#7f2d30" title="Choisir la couleur du projet"></div><label for="projectImprint" style="margin-top:16px">Texte en bas de couverture</label><input id="projectImprint" type="text" maxlength="80" value="Eigrutel Lab" autocomplete="off"></div><div class="dialogfoot"><button type="button" id="cancelDialog">Annuler</button><button type="submit" class="primary">Enregistrer</button></div></form></dialog>
 <dialog id="helpDialog"><div class="dialogbody"><h2>Travailler par projet</h2><p>Créez un projet, cochez ses outils, puis ouvrez Boussole ou Personnages. Le nom du projet est renseigné et les modifications sont enregistrées automatiquement.</p><p>La barre des outils permet de circuler sans charger de fichier. Le bouton « Outils » permet de masquer ou réafficher cette navigation. « Vue du projet » donne accès aux imports et exports propres à chaque outil.</p><h3>Couvertures</h3><p>Dans les réglages, choisissez une image pour la couverture de votre projet. Elle est incluse dans son export JSON.</p><h3>Sauvegarder et transférer</h3><p>« Exporter le projet » télécharge un fichier <strong>projet_nom.json</strong> contenant les données des outils, y compris les portraits de Personnages. Pour Farde, seule la liaison est incluse : conservez également son ZIP séparé. « Importer un projet » restaure une copie indépendante, sans écraser un projet existant.</p><p>Le stockage est local à ce navigateur et à cette adresse. Il n’y a ni compte ni synchronisation automatique. Une copie exportée reste nécessaire en cas d’effacement des données du navigateur.</p><h3>Cette prémaquette</h3><p>Boussole, Personnages, Univers et Scénoscope sont raccordés avec sauvegarde. Narratopedia et Flash s’ouvrent directement depuis GitHub : leurs recherches et tirages ne sont pas enregistrés et peuvent être réinitialisés à chaque ouverture. Une connexion Internet est nécessaire pour les charger. Retirer un outil de la sélection masque son accès mais conserve ses données ; le cocher de nouveau les rétablit. Les applications ouvertes seules gardent leur espace indépendant.</p><p>Les trois fichiers HTML doivent être hébergés ensemble, à la même adresse de dossier. Utilisez un seul onglet Projets à la fois.</p></div><div class="dialogfoot"><button id="closeHelp">Fermer</button></div></dialog>
 <input type="file" id="projectFile" accept=".json,application/json" hidden><input type="file" id="toolFile" accept=".json,application/json" hidden><div id="toast" role="status" hidden></div>
 <script>
@@ -147,7 +154,7 @@ function icon(a){return `<img class="favicon" src="${APP_ICONS[a.id]}" alt="" ti
 const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const uid=()=>crypto.randomUUID(), now=()=>new Date().toISOString();
 let db,projects=[],current=null,activeTool=null,session='',loaded=false,frameTimer,busy=false,editing=false,toolImport=null,writeQueue=Promise.resolve(),pending=new Map(),readOnly=false,coverDraft='',coverBusy=false,coverTicket=0;
-const app=id=>APPS.find(a=>a.id===id), selected=()=>APPS.filter(a=>!a.retired&&current.apps.includes(a.id));
+const app=id=>APPS.find(a=>a.id===id), selected=()=>current.apps.map(app).filter(a=>a&&!a.retired);
 function toast(s){$('toast').textContent=s;$('toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').hidden=true,5000);}
 function status(s,error=false){$('status').textContent=s;$('status').classList.toggle('error',error);}
 function error(e){console.error(e);toast(e.message||String(e));}
@@ -159,17 +166,72 @@ function seed(id,name){if(id==='farde')return {app:'farde-local-link',version:1,
 function stamp(p){p.updatedAt=now();}
 function date(s){return new Date(s).toLocaleString('fr-FR',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});}
 function renderHome(){
- $('projects').innerHTML=projects.slice().sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt)).map(p=>`<article class="book" style="${projectStyle(p)}"><button class="book-cover" data-open="${p.id}" aria-label="Ouvrir le projet ${esc(p.name)}" title="Ouvrir ${esc(p.name)}"><div class="book-heading"><small>Projet</small><h2>${esc(p.name)}</h2></div><div class="book-picture">${validCover(p.cover)?`<img src="${esc(p.cover)}" alt="" loading="lazy">`:'<span class="book-blank">Votre couverture<br>à ajouter dans les réglages</span>'}</div><span class="book-imprint">Eigrutel Lab</span></button><div class="book-meta"><div class="book-tools" aria-label="Outils sélectionnés">${p.apps.filter(id=>!app(id)?.retired).map(id=>`<span role="img" aria-label="${esc(app(id).name)}">${icon(app(id))}</span>`).join('')}</div><small>Modifié le ${esc(date(p.updatedAt))}</small><div class="actions"><button data-open="${p.id}">Ouvrir</button><button data-delete="${p.id}" title="Supprimer ce projet">Supprimer</button></div></div></article>`).join('');
+ $('projects').innerHTML=projects.slice().sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt)).map(p=>`<article class="book" style="${projectStyle(p)}"><button class="book-cover" data-open="${p.id}" aria-label="Ouvrir le projet ${esc(p.name)}" title="Ouvrir ${esc(p.name)}"><div class="book-heading"><small>Projet</small><h2>${esc(p.name)}</h2></div><div class="book-picture">${validCover(p.cover)?`<img src="${esc(p.cover)}" alt="" loading="lazy">`:'<span class="book-blank">Votre couverture<br>à ajouter dans les réglages</span>'}</div><span class="book-imprint">${esc(projectImprint(p))}</span></button><div class="book-meta"><div class="book-tools" aria-label="Outils sélectionnés">${p.apps.filter(id=>!app(id)?.retired).map(id=>`<span role="img" aria-label="${esc(app(id).name)}">${icon(app(id))}</span>`).join('')}</div><small>Modifié le ${esc(date(p.updatedAt))}</small><div class="actions"><button data-open="${p.id}">Ouvrir</button><button data-delete="${p.id}" title="Supprimer ce projet">Supprimer</button></div></div></article>`).join('');
  $('empty').hidden=projects.length>0;
 }
 function renderRail(){
- $('rail').innerHTML='<button data-tool="overview" class="'+(!activeTool?'active':'')+'">Vue du projet</button>'+['Scénario','Créativité','Organisation'].map(g=>{const list=selected().filter(a=>a.group===g);return !list.length?'':`<div class="rail-label">${g}</div>`+list.map(a=>`<button data-tool="${a.id}" class="${activeTool===a.id?'active':''}" ${activeTool===a.id?'aria-current="page"':''}>${icon(a)}<span class="navname">${esc(a.name)}${!a.live?'<small>À raccorder</small>':''}</span></button>`).join('');}).join('');
+ $('rail').innerHTML='<button data-tool="overview" class="'+(!activeTool?'active':'')+'">Vue du projet</button>'+selected().map(a=>`<button data-tool="${a.id}" class="${activeTool===a.id?'active':''}" ${activeTool===a.id?'aria-current="page"':''}>${icon(a)}<span class="navname">${esc(a.name)}${!a.live?'<small>À raccorder</small>':''}</span></button>`).join('');
 }
 function renderOverview(){
  $('projectTitle').textContent=current.name;
- $('overview').innerHTML=`<div class="heading"><h2>Les outils du projet</h2><button id="chooseTools">Choisir les outils</button></div><div class="tool-list">${selected().map(a=>`<article class="tool-entry ${a.live?'':'future'}"><button class="tool-banner" data-tool="${a.id}" title="${esc(a.desc)}" aria-label="${a.live?'Ouvrir':'Raccordement à venir :'} ${esc(a.name)}"><span class="medallion">${icon(a)}</span><span class="banner-label"><strong>${esc(a.name)}</strong><small>${esc(a.group)}${a.live?'':' · À raccorder'}</small></span>${a.live?'<span class="open-label">Ouvrir</span>':''}</button>${a.live&&!a.directUrl&&!a.localZip?`<div class="tool-actions"><button data-tool-import="${a.id}" title="Remplacer les données de cet outil par un JSON existant">Importer JSON</button><button data-tool-export="${a.id}" title="Télécharger le JSON de cet outil uniquement">Exporter JSON</button></div>`:''}${a.localZip?`<p class="tool-actions" style="display:block"><strong style="display:block;color:#a1262f;font-weight:800">ZIP SÉPARÉ — PENSER À ENREGISTRER LE ZIP !</strong>${esc(current.tools.farde?.zipName||'À sauvegarder dans Farde')}${current.tools.farde?.needsZip?' · Modifications à exporter':''}</p>`:''}</article>`).join('')}</div>`;
+ $('overview').innerHTML=`<div class="heading"><h2>Les outils du projet</h2><button id="chooseTools">Choisir les outils</button></div><div class="tool-list">${selected().map(a=>`<article data-order-tool="${a.id}" class="tool-entry ${a.live?'':'future'}"><button class="tool-banner" data-tool="${a.id}" title="${esc(a.desc)} — Glissez pour déplacer ; au clavier : Alt + flèches." aria-keyshortcuts="Alt+ArrowLeft Alt+ArrowRight Alt+ArrowUp Alt+ArrowDown" aria-label="${a.live?'Ouvrir':'Raccordement à venir :'} ${esc(a.name)}"><span class="medallion">${icon(a)}</span><span class="banner-label"><strong>${esc(a.name)}</strong><small>${esc(a.group)}${a.live?'':' · À raccorder'}</small></span>${a.live?'<span class="open-label">Ouvrir</span>':''}</button>${a.live&&!a.directUrl&&!a.localZip?`<div class="tool-actions"><button data-tool-import="${a.id}" title="Remplacer les données de cet outil par un JSON existant">Importer JSON</button><button data-tool-export="${a.id}" title="Télécharger le JSON de cet outil uniquement">Exporter JSON</button></div>`:''}${a.localZip?`<p class="tool-actions" style="display:block"><strong style="display:block;color:#a1262f;font-weight:800">ZIP SÉPARÉ — PENSER À ENREGISTRER LE ZIP !</strong>${esc(current.tools.farde?.zipName||'À sauvegarder dans Farde')}${current.tools.farde?.needsZip?' · Modifications à exporter':''}</p>`:''}</article>`).join('')}</div>`;
  $('chooseTools').onclick=()=>act(()=>openDialog(true));
 }
+
+// L’ordre est porté par apps : il suit les exports JSON et la navigation latérale.
+function reorderedTools(ids,source,target){
+ const result=[...ids],from=result.indexOf(source),to=result.indexOf(target);
+ if(from<0||to<0||from===to)return result;
+ result.splice(from,1);result.splice(to,0,source);return result;
+}
+async function moveProjectTool(source,target){
+ if(!current||source===target)return;
+ const project=current,apps=reorderedTools(project.apps,source,target);
+ await persist({...project,apps,updatedAt:now()});
+ project.apps=apps;stamp(project);
+ if(current===project){renderOverview();renderRail();$('overview').querySelector(`[data-tool="${source}"]`)?.focus({preventScroll:true});}
+}
+let toolDrag=null,suppressToolClickUntil=0;
+const orderSurface=$('overview');
+orderSurface.addEventListener('pointerdown',event=>{
+ const button=event.target.closest('.tool-banner');
+ if(!button||busy||readOnly||event.button!==0||!event.isPrimary)return;
+ toolDrag={pointer:event.pointerId,button,source:button.dataset.tool,target:null,x:event.clientX,y:event.clientY,started:false};
+ button.setPointerCapture(event.pointerId);
+});
+orderSurface.addEventListener('pointermove',event=>{
+ const d=toolDrag;if(!d||d.pointer!==event.pointerId)return;
+ if(!d.started&&Math.hypot(event.clientX-d.x,event.clientY-d.y)<9)return;
+ d.started=true;event.preventDefault();
+ d.button.closest('.tool-entry').classList.add('is-dragging');
+ orderSurface.querySelectorAll('.drop-target').forEach(el=>el.classList.remove('drop-target'));
+ const target=document.elementFromPoint(event.clientX,event.clientY)?.closest('[data-order-tool]');
+ d.target=target&&orderSurface.contains(target)?target.dataset.orderTool:null;
+ if(target&&d.target!==d.source)target.classList.add('drop-target');
+ // Défilement à proximité des bords pour atteindre les dernières cartes sur mobile.
+ const scrollSurface=orderSurface.parentElement;const box=scrollSurface.getBoundingClientRect();
+ if(event.clientY>Math.min(box.bottom,innerHeight)-55)scrollSurface.scrollTop+=18;
+ else if(event.clientY<Math.max(box.top,0)+55)scrollSurface.scrollTop-=18;
+});
+function finishToolDrag(event,cancelled=false){
+ const d=toolDrag;if(!d||d.pointer!==event.pointerId)return;
+ toolDrag=null;
+ if(d.button.hasPointerCapture(event.pointerId))d.button.releasePointerCapture(event.pointerId);
+ orderSurface.querySelectorAll('.is-dragging,.drop-target').forEach(el=>el.classList.remove('is-dragging','drop-target'));
+ if(d.started){suppressToolClickUntil=Date.now()+600;if(!cancelled&&d.target)act(()=>moveProjectTool(d.source,d.target));}
+}
+orderSurface.addEventListener('pointerup',e=>finishToolDrag(e));
+orderSurface.addEventListener('pointercancel',e=>finishToolDrag(e,true));
+orderSurface.addEventListener('lostpointercapture',e=>finishToolDrag(e,true));
+orderSurface.addEventListener('click',event=>{if(Date.now()<suppressToolClickUntil){event.preventDefault();event.stopImmediatePropagation();}},true);
+orderSurface.addEventListener('dragstart',event=>{if(event.target.closest('.tool-banner'))event.preventDefault();});
+orderSurface.addEventListener('keydown',event=>{
+ const button=event.target.closest('.tool-banner');
+ if(!button||!event.altKey||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key))return;
+ event.preventDefault();const ids=selected().map(a=>a.id),i=ids.indexOf(button.dataset.tool);
+ const target=ids[i+(['ArrowLeft','ArrowUp'].includes(event.key)?-1:1)];
+ if(target)act(()=>moveProjectTool(button.dataset.tool,target));
+});
 function post(type,more={}){$('appFrame').contentWindow?.postMessage({channel:'eigrutel-projets-v1',type,initId:session,...more},location.origin);}
 function flush(){
  if(!activeTool||!app(activeTool).live||app(activeTool).directUrl||!loaded)return writeQueue;
@@ -265,10 +327,11 @@ window.addEventListener('message',async event=>{
    }catch(e){status('Échec de l’enregistrement',true);const wait=pending.get(m.requestId);if(wait){clearTimeout(wait.timer);pending.delete(m.requestId);wait.reject(new Error('Sauvegarde impossible. Vos données restent dans l’application ouverte.'));}else toast('Sauvegarde impossible. Gardez cet espace ouvert et exportez vos données.');}
  }
 });
-function openDialog(edit=false){editing=edit;$('projectColor').value=projectColor(edit?current:null);coverTicket++;coverBusy=false;coverDraft=edit?(current.cover||''):'';renderCoverPreview();document.querySelector('#projectForm button[type=submit]').disabled=false;$('dialogTitle').textContent=edit?'Réglages du projet':'Nouveau projet';$('name').value=edit?current.name:'';const ids=edit?current.apps:['personnages','boussole'];$('choices').innerHTML=['Scénario','Créativité','Organisation'].map(g=>`<fieldset><legend>${g}</legend><div class="options">${APPS.filter(a=>!a.retired&&a.group===g).map(a=>`<label class="choice"><input type="checkbox" name="tool" value="${a.id}" ${ids.includes(a.id)?'checked':''}>${icon(a)}<span>${esc(a.name)}<small>${a.directUrl?'Accès direct · sans sauvegarde':a.live?'Disponible':'À raccorder'}</small></span></label>`).join('')}</div></fieldset>`).join('');$('projectDialog').showModal();$('name').focus();}
+function openDialog(edit=false){editing=edit;$('projectImprint').value=projectImprint(edit?current:null);$('projectColor').value=projectColor(edit?current:null);coverTicket++;coverBusy=false;coverDraft=edit?(current.cover||''):'';renderCoverPreview();document.querySelector('#projectForm button[type=submit]').disabled=false;$('dialogTitle').textContent=edit?'Réglages du projet':'Nouveau projet';$('name').value=edit?current.name:'';const ids=edit?current.apps:['personnages','boussole'];$('choices').innerHTML=['Scénario','Créativité','Organisation'].map(g=>`<fieldset><legend>${g}</legend><div class="options">${APPS.filter(a=>!a.retired&&a.group===g).map(a=>`<label class="choice"><input type="checkbox" name="tool" value="${a.id}" ${ids.includes(a.id)?'checked':''}>${icon(a)}<span>${esc(a.name)}<small>${a.directUrl?'Accès direct · sans sauvegarde':a.live?'Disponible':'À raccorder'}</small></span></label>`).join('')}</div></fieldset>`).join('');$('projectDialog').showModal();$('name').focus();}
 
 
 const DEFAULT_PROJECT_COLOR='#7f2d30';
+function projectImprint(p){return typeof p?.imprint==='string'?p.imprint:'Eigrutel Lab';}
 function projectColor(p){return /^#[0-9a-f]{6}$/i.test(p?.color||'')?p.color.toLowerCase():DEFAULT_PROJECT_COLOR;}
 // The chosen color stays exact on the border; darken only text/buttons for readability.
 function readableAccent(hex){
@@ -317,7 +380,8 @@ $('projectForm').onsubmit=e=>{e.preventDefault();act(async()=>{
  const name=$('name').value.trim(),ids=Array.from($('choices').querySelectorAll('input:checked')).map(i=>i.value);
  if(!name){$('name').focus();return;}if(!ids.length){toast('Choisissez au moins un outil.');return;}
  let p;
- if(editing){await clearFrame();p=current;if(p.tools.boussole?.data?.titreHistoire===p.name)p.tools.boussole.data.titreHistoire=name;p.name=name;p.apps=ids;}else{p={id:uid(),name,apps:ids,tools:{},createdAt:now(),updatedAt:now()};}
+ if(editing){await clearFrame();p=current;if(p.tools.boussole?.data?.titreHistoire===p.name)p.tools.boussole.data.titreHistoire=name;p.name=name;p.apps=[...p.apps.filter(id=>ids.includes(id)),...ids.filter(id=>!p.apps.includes(id))];}else{p={id:uid(),name,apps:ids,tools:{},createdAt:now(),updatedAt:now()};}
+ p.imprint=$('projectImprint').value.trim().slice(0,80);
  p.cover=coverDraft;p.color=projectColor({color:$('projectColor').value});
  for(const id of ids)if(!(id in p.tools))p.tools[id]=seed(id,name);
  // Rename the managed project label; preserve a deliberately edited story title.
@@ -435,7 +499,7 @@ function importFormat(data){
  for(const [id,value] of Object.entries(p.tools)){if(!app(id))throw new Error('Outil inconnu : '+id);validateTool(id,value);}
  for(const id of p.apps)if(app(id).live&&!app(id).directUrl&&id!=='univers'&&id!=='scenoscope'&&id!=='comicscript'&&id!=='pop'&&id!=='wip'&&id!=='7questions'&&id!=='farde'&&!p.tools[id])throw new Error('Les données de '+app(id).name+' sont manquantes.');
  if(p.cover && !validCover(p.cover))throw new Error('Image de couverture invalide.');
- return {id:uid(),cover:p.cover||'',color:projectColor(p),colorTitles:p.colorTitles===true,name:p.name.trim(),apps:[...new Set(p.apps)],tools:structuredClone(p.tools),createdAt:now(),updatedAt:now()};
+ return {id:uid(),imprint:projectImprint(p).slice(0,80),cover:p.cover||'',color:projectColor(p),colorTitles:p.colorTitles===true,name:p.name.trim(),apps:[...new Set(p.apps)],tools:structuredClone(p.tools),createdAt:now(),updatedAt:now()};
 }
 $('projectFile').onchange=e=>act(async()=>{const f=e.target.files[0];e.target.value='';if(!f)return;const p=importFormat(JSON.parse(await f.text()));const base=p.name;let n=2;while(projects.some(x=>x.name===p.name))p.name=base+' ('+(n++)+')';if(p.tools.personnages)p.tools.personnages.projectName=p.name;await persist(p);projects.push(p);await showProject(p);toast('Projet importé dans un nouvel espace.');});
 $('toolFile').onchange=e=>act(async()=>{const f=e.target.files[0];e.target.value='';if(!f)return;const id=toolImport;const data=JSON.parse(await f.text());validateTool(id,data);if(!confirm('Remplacer les données de '+app(id).name+' dans « '+current.name+' » ?'))return;await clearFrame();if(id==='personnages')data.projectName=current.name;current.tools[id]=data;stamp(current);await persist(current);await openTool(id);toast('Données importées.');});
